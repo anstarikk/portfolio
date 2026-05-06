@@ -1,0 +1,456 @@
+/* ============================================
+   RESET & VARIABLES
+   ============================================ */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Couleurs */
+  --bleu-fonce:  #1A1878;
+  --bleu-carte:  #2E2DAE;
+  --blanc:       #ffffff;
+  --noir:       #000;
+  --texte-pale:  rgba(255, 255, 255, 0.72);
+  --texte-gris:  #555;
+
+  /* Gradient (nav & footer) */
+  --gradient:    linear-gradient(to right, #3B5B9F, #19209C);
+
+  /* Rayons */
+  --radius-carte: 40px;
+  --radius-nav:   20px;
+  --radius-image: 30px;
+  --radius-btn:   8px;
+
+  /* Espacements */
+  --padding-h:  40px;
+  --padding-v:  80px;
+  --gap:        40px;
+  --gap-sm:     20px;
+
+  /* Largeurs max — écart de 80px = 2 × --padding-h pour aligner nav et contenu */
+  --max-width-nav:     1200px;
+  --max-width-content: 1280px;
+
+  /* Typographie */
+  --fs-h1:   80px;
+  --fs-h2:   40px;
+  --fs-h3:   30px;
+  --fs-body: 14px;
+  --fs-nav:  12px;
+  --fs-xs:   11px;
+  --ls-nav:  0.06em;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bleu-fonce);
+  color: var(--blanc);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ============================================
+   NAVIGATION (header & footer partagent .navbar)
+   ============================================ */
+nav {
+  border-radius: 0 0 var(--radius-nav) var(--radius-nav);
+  overflow: hidden;
+}
+
+nav a{
+  transition: opacity 0.2s;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--gap-sm) var(--padding-h);
+  width: 100%;
+  max-width: var(--max-width-nav);
+  background: var(--gradient);
+}
+
+
+.logo {
+  color: var(--blanc);
+  font-size: var(--fs-nav);
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: var(--gap);
+}
+
+.nav-links a {
+  color: var(--blanc);
+  text-decoration: none;
+  font-size: var(--fs-nav);
+  font-weight: 500;
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  opacity: 0.7;
+}
+
+.btn-nav {
+  color: var(--blanc);
+  text-decoration: none;
+  font-size: var(--fs-nav);
+  font-weight: 500;
+  letter-spacing: var(--ls-nav);
+  text-transform: uppercase;
+  border: 1.5px solid var(--blanc);
+  padding: 10px var(--gap-sm);
+  border-radius: var(--radius-btn);
+  background: var(--gradient);
+}
+
+.btn-nav:hover {
+  opacity: 0.80;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+#hero {
+  background-color: var(--bleu-fonce);
+  padding: var(--padding-v) var(--padding-h);
+  width: 100%;
+  max-width: var(--max-width-content);
+}
+
+#hero h1 {
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: var(--gap-sm);
+}
+
+#hero h1 em {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 100;
+  font-size: calc(var(--fs-h1) + 4px);
+}
+
+#hero p {
+  font-size: 24px;
+  color: var(--texte-pale);
+  line-height: 1.4;
+}
+
+/* ============================================
+   MAIN
+   ============================================ */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: var(--max-width-content);
+  width: 100%;
+}
+
+/* ============================================
+   COMPÉTENCES
+   ============================================ */
+.competences {
+  padding: 0 var(--padding-h) var(--padding-h);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+
+.competence-card {
+  background: var(--gradient);
+  border-radius: var(--radius-carte);
+  padding: var(--padding-h);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.competence-card h3 {
+   font-size: var(--fs-h3);
+   font-weight: 400;
+   margin-bottom: var(--gap);
+}
+
+.competence-card p {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--texte-pale);
+  flex: 1;
+}
+
+/* ============================================
+   TAGS (compétences & projets)
+   ============================================ */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: var(--fs-xs);
+  font-weight: 300;
+  padding: 5px 14px;
+  border: 1px solid var(--blanc);
+  border-radius: 999px;
+  color: var(--blanc);
+  white-space: nowrap;
+}
+
+.projet-card .tag {
+  border-color: var(--noir);
+  color: var(--noir);
+}
+
+/* ============================================
+   PROJETS
+   ============================================ */
+.projets {
+  padding: var(--padding-h);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  width: 100%;
+}
+
+.projets h2 {
+  font-size: var(--fs-h2);
+  font-weight: 500;
+}
+
+.projet-card {
+  width: 100%;
+  height: 56dvh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: center;
+  border-radius: var(--radius-carte);
+  padding: var(--padding-h);
+  background-color: var(--blanc);
+  color: #111;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+}
+
+.projet-card.reverse {
+  direction: ltr;
+}
+
+.projet-top, .projet-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.projet-image {
+  width: 100%;
+  height: 100%;
+}
+
+.projet-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-image);
+  display: block;
+}
+
+.projet-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.projet-content h3 {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+}
+
+.projet-content p {
+  font-size: var(--fs-body);
+  line-height: 1.7;
+  color: var(--texte-gris);
+}
+
+.btn-projet {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 11px 22px;
+  margin-top: 20px;
+  font-size: var(--fs-nav);
+  font-weight: 500;
+  letter-spacing: var(--ls-nav);
+  text-decoration: none;
+  border-radius: var(--radius-btn);
+  background: var(--gradient);
+  color: var(--blanc);
+  transition: opacity 0.2s;
+}
+
+.btn-projet:hover {
+  opacity: 0.85;
+}
+
+/* ============================================
+   PARCOURS
+   ============================================ */
+.parcours {
+  background-color: var(--bleu-fonce);
+  padding: var(--padding-v) var(--padding-h);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+  align-items: start;
+  width: 100%;
+}
+
+.parcours h2 {
+  font-size: var(--fs-h2);
+  font-weight: 500;
+}
+
+.parcours-liste {
+  padding: var(--gap-sm) var(--gap);
+  background: var(--gradient);
+  border-radius: var(--radius-carte);
+  list-style: none;
+  overflow: hidden;
+}
+
+.parcours-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: var(--gap-sm) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.parcours-item:last-child {
+  border-bottom: none;
+}
+
+.parcours-titre {
+  font-size: var(--fs-body);
+  font-weight: 500;
+}
+
+.parcours-lieu {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--texte-pale);
+  text-transform: uppercase;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+  width: 100%;
+  max-width: var(--max-width-nav);
+  border-radius: var(--radius-nav) var(--radius-nav) 0 0;
+  overflow: hidden;
+}
+
+footer a{
+  transition: opacity 0.2s;
+}
+
+/* ============================================
+   RESPONSIVE — TABLETTE (≤ 768px)
+   Redéfinir les variables suffit pour tout
+   ce qui les utilise. Le reste est layout.
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --padding-h:  28px;
+    --padding-v:  60px;
+    --gap:        28px;
+    --fs-h1:      52px;
+    --fs-h2:      32px;
+    --fs-h3:      24px;
+  }
+
+  /* Nav : on masque les liens, garde logo + CTA */
+  .nav-links {
+    display: none;
+  }
+
+  /* Compétences : une seule colonne */
+  .competences {
+    grid-template-columns: 1fr;
+  }
+
+  /* Projets : une seule colonne, hauteur auto */
+  .projet-card {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  /* Image toujours en premier sur mobile */
+  .projet-card .projet-image {
+    order: -1;
+    height: 240px;
+  }
+
+  /* Parcours : une seule colonne */
+  .parcours {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE (≤ 480px)
+   ============================================ */
+@media (max-width: 480px) {
+  :root {
+    --padding-h:  16px;
+    --padding-v:  40px;
+    --gap:        20px;
+    --gap-sm:     12px;
+    --fs-h1:      38px;
+    --fs-h2:      26px;
+    --fs-h3:      20px;
+    --fs-body:    13px;
+  }
+
+  /* Hero : taille em fixe pour que le calc() sur em reste cohérent */
+  #hero h1 em {
+    font-size: calc(var(--fs-h1) + 2px);
+  }
+
+  #hero p {
+    font-size: 16px;
+  }
+
+  /* Bouton nav réduit */
+  .btn-nav {
+    font-size: 10px;
+    padding: 8px 12px;
+  }
+
+  /* Image projet plus petite */
+  .projet-card .projet-image {
+    height: 180px;
+  }
+}
