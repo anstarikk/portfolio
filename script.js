@@ -117,6 +117,7 @@ fetch('data.json')
           </div>
         </article>
       `;
+  
 
       sectionProjets.insertAdjacentHTML('beforeend', carte);
     });
