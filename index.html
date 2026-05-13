@@ -1,18 +1,174 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    
-//test 
 
-    
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a class="logo" href="#">LOGO</a>
+
+    <ul class="nav-links">
+      <li><a href="#competences">MES COMPÉTENCES ↗</a></li>
+      <li><a href="#projets">MES PROJETS ↗</a></li>
+      <li><a href="#parcours">MON PARCOURS ↗</a></li>
+    </ul>
+
+    <a class="btn-nav" href="#contact">CONTACTEZ MOI ↗</a>
+  </nav>
+
+  <header id="hero">
+    <h1>
+      Je donne <em>vie</em><br>à vos idées
+    </h1>
+    <p>Je travaille avec vous pour construire vos projets numériques</p>
+  </header>
+
+  <section id="competences" class="competences">
+
+    <h2>Mes compétences</h2>
+
+    <div class="competence-card">
+      <h3>UI/UX design</h3>
+      <p>Lorem ipsum...</p>
+
+      <div class="tags">
+        <span class="tag">UI/UX design</span>
+        <span class="tag">Identité graphique</span>
+        <span class="tag">Prototypage</span>
+        <span class="tag">Design interactif</span>
+      </div>
+    </div>
+
+    <div class="competence-card">
+      <h3>Intégrateur front end</h3>
+      <p>Lorem ipsum...</p>
+
+      <div class="tags">
+        <span class="tag">Javascript</span>
+        <span class="tag">HTML/CSS</span>
+        <span class="tag">Python</span>
+        <span class="tag">Ruby</span>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="projets" class="projets">
+
+    <article class="projet-card">
+      <div class="projet-content">
+
+        <div class="projet-top">
+          <h3>Nom du projet</h3>
+          <div class="tags">
+            <span class="tag">Web design</span>
+            <span class="tag">Development</span>
+          </div>
+        </div>
+
+        <div class="projet-bottom">
+          <p>Lorem ipsum...</p>
+          <a class="btn-projet" href="#">VOIR LE PROJET ↗</a>
+        </div>
+
+      </div>
+
+      <div class="projet-image">
+        <img src="assets/project-img.jpeg" alt="Aperçu du projet">
+      </div>
+    </article>
+
+    <article class="projet-card reverse">
+
+      <div class="projet-image">
+        <img src="assets/project-img.jpeg" alt="Aperçu du projet">
+      </div>
+
+      <div class="projet-content">
+
+        <div class="projet-top">
+          <h3>Nom du projet</h3>
+          <div class="tags">
+            <span class="tag">Web design</span>
+            <span class="tag">Development</span>
+          </div>
+        </div>
+
+        <div class="projet-bottom">
+          <p>Lorem ipsum...</p>
+          <a class="btn-projet" href="#">VOIR LE PROJET ↗</a>
+        </div>
+
+      </div>
+
+    </article>
+
+    <article class="projet-card">
+      <div class="projet-content">
+
+        <div class="projet-top">
+          <h3>Nom du projet</h3>
+          <div class="tags">
+            <span class="tag">Web design</span>
+            <span class="tag">Development</span>
+          </div>
+        </div>
+
+        <div class="projet-bottom">
+          <p>Lorem ipsum...</p>
+          <a class="btn-projet" href="#">VOIR LE PROJET ↗</a>
+        </div>
+
+      </div>
+
+      <div class="projet-image">
+        <img src="assets/project-img.jpeg" alt="Aperçu du projet">
+      </div>
+    </article>
+
+  </section>
+
+  <section id="parcours" class="parcours">
+
+    <h2>Mon parcours</h2>
+
+    <ul class="parcours-liste">
+
+      <li class="parcours-item">
+        <p class="parcours-titre">2022 - Intitulé diplôme / poste</p>
+        <p class="parcours-lieu">Entreprise / École</p>
+      </li>
+
+      <li class="parcours-item">
+        <p class="parcours-titre">2021 - Intitulé diplôme / poste</p>
+        <p class="parcours-lieu">Entreprise / École</p>
+      </li>
+
+      <li class="parcours-item">
+        <p class="parcours-titre">2020 - Intitulé diplôme / poste</p>
+        <p class="parcours-lieu">Entreprise / École</p>
+      </li>
+
+      <li class="parcours-item">
+        <p class="parcours-titre">2019 - Intitulé diplôme / poste</p>
+        <p class="parcours-lieu">Entreprise / École</p>
+      </li>
+
+    </ul>
+
+  </section>
+
+</body>
+
 </html>
